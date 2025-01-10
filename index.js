@@ -4,18 +4,18 @@ const server = express();
 
 
 server.get("/hello", (req, res) => {
-    const {nome, idade} = req.query;
+    const {nome, idade, cargo} = req.query;
 
 
     return res.json({
         title: "Hello world",
-        message: `oi teste ${nome} `,
-        idade: idade
+        message: `eu sou ${nome} e tenho ${idade} anos e trabalho como ${cargo} na empresa octadroid `,
+        
     });
 });
 
 server.get("/hello/:nome", (req, res) => {
-    const nome = req.params.nome;
+    const {nome, idade, cargo} = req.params;
 
     return res.json({
         title: "Hello World",
