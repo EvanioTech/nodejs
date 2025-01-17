@@ -72,6 +72,8 @@ server.delete("/customers/:id", ( req, res) => {
 
     return res.status(status).json();
 
+   
+
 
 });
 
