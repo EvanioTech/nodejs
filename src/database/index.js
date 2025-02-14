@@ -12,10 +12,14 @@ class Database {
     constructor() {
        this.connection = new Sequelize(config);
         this.init();
+        this.associate();
     }
 
     init() {
         models.map(model => model.init(this.connection));
+    }
+    associate() {
+        models.map(model => model.associate && model.associate(this.connection.models));
     }
 }   
 
